@@ -6,15 +6,11 @@ QuackyCharts is a graphing gem I'm working on.  The goal is to easily create cha
 
 Add this line to your application's Gemfile:
 
-    gem 'quacky-charts'
+		gem 'quacky-charts'
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install quacky-charts
+ 		$ bundle
 
 Install the needed JS files
 
@@ -29,7 +25,7 @@ In app/assets/javascripts/application.js
 		
 In your controller
 
-		@generator = QuackCharts::Builder.new
+		@generator = QuackyCharts::Builder.new
 		
 In your view
 

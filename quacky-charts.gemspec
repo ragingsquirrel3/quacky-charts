@@ -4,8 +4,8 @@ require File.expand_path('../lib/quacky-charts/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Travis Sheppard"]
   gem.email         = ["travissheppard.1988@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{A Rails Charting Gem}
+  gem.summary       = %q{Configure Charts in Ruby; QuackyCharts builds them with JS tools.}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
