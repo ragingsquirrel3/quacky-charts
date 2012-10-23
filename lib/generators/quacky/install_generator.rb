@@ -1,6 +1,6 @@
 require 'rails/generators'
 
-module QuackyCharts
+module Quacky
   module Generators
     class InstallGenerator < ::Rails::Generators::Base
       
