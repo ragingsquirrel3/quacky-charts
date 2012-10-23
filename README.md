@@ -25,7 +25,7 @@ Add these lines to app/assets/javascripts/application.js:
 		
 and to the controller:
 
-		@chart = QuackyC::PieChartBuilder.new
+		@chart = Quacky::PieChartBuilder.new
 		
 and finally, in the view:
 
