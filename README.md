@@ -1,3 +1,7 @@
+## About
+
+QuackyCharts is a gem I'm working
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -12,10 +16,25 @@ Or install it yourself as:
 
     $ gem install quacky-charts
 
+Install the needed JS files
+
+		rails generate quacky:install
+
 ## Usage
 
-TODO: Write usage instructions here
+In app/assets/javascripts/application.js
 
+		//= require d3.v2.min
+		//= require pie_charts.js
+		
+In your controller
+
+		@generator = QuackCharts::Builder.new
+		
+In your view
+
+		<%= @generator.pie_chart %>
+		
 ## Contributing
 
 1. Fork it
