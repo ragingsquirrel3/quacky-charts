@@ -20,7 +20,6 @@ Run this command to install the needed JS files:
 
 Add these lines to app/assets/javascripts/application.js:
 
-		//= require d3.v2.min
 		//= require pie_charts
 		
 and to the controller:
