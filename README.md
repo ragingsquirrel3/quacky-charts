@@ -12,24 +12,24 @@ And then execute:
 
  		$ bundle
 
-Install the needed JS files
+Run this command to install the needed JS files:
 
 		$ rails generate quacky:install
 
 ## Usage
 
-In app/assets/javascripts/application.js
+Add these lines to app/assets/javascripts/application.js:
 
 		//= require d3.v2.min
 		//= require pie_charts.js
 		
-In your controller
+and to the controller:
 
-		@generator = QuackyCharts::Builder.new
+		@chart = QuackyC::PieChartBuilder.new
 		
-In your view
+and finally, in the view:
 
-		<%= @generator.pie_chart %>
+		<%= @chart.draw %>
 		
 ## Contributing
 
