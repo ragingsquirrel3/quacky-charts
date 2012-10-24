@@ -12,9 +12,9 @@ describe "Quacky::PieChartBuilder" do
     chart.class.should eq(Quacky::PieChartBuilder)
   end
   
-  # it "should be able to draw" do
-  #   chart = Quacky::PieChartBuilder.new
-  #   chart.draw
-  # end
+  it "should be able to draw and raise error" do
+    chart = Quacky::PieChartBuilder.new
+    lambda {chart.draw}.should raise_error
+  end
   
 end
