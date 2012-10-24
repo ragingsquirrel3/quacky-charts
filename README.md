@@ -18,16 +18,11 @@ Run this command to install the needed JS files:
 
 ## Usage
 
-Add these lines to app/assets/javascripts/application.js:
-
-		//= require d3.v2.min
-		//= require pie_charts.js
-		
-and to the controller:
+Add this line to the controller:
 
 		@chart = Quacky::PieChartBuilder.new
 		
-and finally, in the view:
+and in the view:
 
 		<%= @chart.draw %>
 		
