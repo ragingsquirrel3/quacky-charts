@@ -14,7 +14,53 @@ describe "Quacky::PieChartBuilder" do
   
   it "should have random data after initialization" do
     chart = Quacky::PieChartBuilder.new
-    chart.data.class.should eq(Hash)
+    first_set = chart.get_data
+    
+    chart = Quacky::PieChartBuilder.new
+    second_set = chart.get_data
+    
+    first_set.should_not eq(second_set)
+  end
+  
+  it "should have one data point after adding one data point" do
+    chart = Quacky::PieChartBuilder.new
+    
+    example_data_point = { "label" => "one", "value" => 20 }
+    
+    chart.add_data(example_data_point)
+    chart.get_data.should eq( [ example_data_point ] )
+  end
+  
+  it "should have two data points after adding two sequentially" do
+    chart = Quacky::PieChartBuilder.new
+    
+    first_example_data_point = { "label" => "one", "value" => 20 }
+    second_example_data_point = { "label" => "two", "value" => 50 }
+    
+    chart.add_data(first_example_data_point)
+    chart.add_data(second_example_data_point)
+    chart.get_data.should eq( [ first_example_data_point, second_example_data_point ] )
+  end
+  
+  it "should be able to accept an array of data, rather than a hash" do
+    chart = Quacky::PieChartBuilder.new
+    
+    first_example_data_point = { "label" => "one", "value" => 20 }
+    second_example_data_point = { "label" => "two", "value" => 50 }
+    
+    chart.add_data( [ first_example_data_point, second_example_data_point ] )
+    chart.get_data.should eq( [ first_example_data_point, second_example_data_point ] )
+  end
+  
+  it "should clear and replace data if an array is added" do
+    chart = Quacky::PieChartBuilder.new
+    
+    first_example_data_point = { "label" => "one", "value" => 20 }
+    second_example_data_point = { "label" => "two", "value" => 50 }
+    
+    chart.add_data(first_example_data_point)
+    chart.add_data( [ first_example_data_point, second_example_data_point ] )
+    chart.get_data.should eq( [ first_example_data_point, second_example_data_point ] )
   end
   
   it "should be able to draw and raise error" do
