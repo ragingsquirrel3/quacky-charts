@@ -22,6 +22,12 @@ describe "Quacky::PieChartBuilder" do
     first_set.should_not eq(second_set)
   end
   
+  it "should have specified data if passed as an initialization variable" do 
+    example_data_set = [ { "label" => "one", "value" => 20 }, { "label" => "two", "value" => 50 } ]
+    chart = Quacky::PieChartBuilder.new(example_data_set)
+    chart.get_data.should eq(example_data_set)
+  end
+  
   it "should have one data point after adding one data point" do
     chart = Quacky::PieChartBuilder.new
     
