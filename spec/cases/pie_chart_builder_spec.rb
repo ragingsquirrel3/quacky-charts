@@ -12,6 +12,11 @@ describe "Quacky::PieChartBuilder" do
     chart.class.should eq(Quacky::PieChartBuilder)
   end
   
+  it "should have random data after initialization" do
+    chart = Quacky::PieChartBuilder.new
+    chart.data.class.should eq(Hash)
+  end
+  
   it "should be able to draw and raise error" do
     chart = Quacky::PieChartBuilder.new
     lambda {chart.draw}.should raise_error
