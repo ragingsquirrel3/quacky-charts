@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "quacky-charts"
   gem.require_paths = ["lib"]
   gem.version       = QuackyCharts::VERSION
+  
+  gem.add_development_dependency(%q<rspec>)
 end
