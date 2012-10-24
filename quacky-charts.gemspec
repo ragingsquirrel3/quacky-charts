@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = QuackyCharts::VERSION
   
   gem.add_development_dependency(%q<rspec>)
+  gem.add_runtime_dependency(%q<coffee-rails>,    ["~> 3.2.1"])
 end
