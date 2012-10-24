@@ -1,3 +1,4 @@
+# based on the example at https://github.com/mbostock/d3/blob/master/examples/donut/donut.html
 $(document).ready( ->
 	builder = new PieChartBuilder
 	builder.drawCharts()
@@ -15,7 +16,7 @@ class PieChartBuilder
 	          {"label":"two", "value":50}, 
 	          {"label":"three", "value":30}]
 	
-		vis = d3.select("body").append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")")
+		vis = d3.select(".pie-chart").append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")")
 		arc = d3.svg.arc().outerRadius(r)
 		
 		pie = d3.layout.pie().value( (d) ->
