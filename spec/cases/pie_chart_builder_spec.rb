@@ -61,7 +61,7 @@ describe "Quacky::PieChartBuilder" do
   
   it "should be able to draw and raise error" do
     chart = Quacky::PieChartBuilder.new
-    chart.draw.should be_true
+    lambda {chart.draw}.should raise_error
   end
   
 end
