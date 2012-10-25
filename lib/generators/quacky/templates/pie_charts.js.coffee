@@ -1,4 +1,3 @@
-# based on the example at https://github.com/mbostock/d3/blob/master/examples/donut/donut.html
 $(document).ready( ->
 	builder = new PieChartBuilder
 	builder.drawCharts()
