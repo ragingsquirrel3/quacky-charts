@@ -12,16 +12,6 @@ describe "Quacky::PieChartBuilder" do
     chart.class.should eq(Quacky::PieChartBuilder)
   end
   
-  it "should have random data after initialization" do
-    chart = Quacky::PieChartBuilder.new
-    first_set = chart.get_data
-    
-    chart = Quacky::PieChartBuilder.new
-    second_set = chart.get_data
-    
-    first_set.should_not eq(second_set)
-  end
-  
   it "should have specified data if passed as an initialization variable" do 
     example_data_set = [ { "label" => "one", "value" => 20 }, { "label" => "two", "value" => 50 } ]
     chart = Quacky::PieChartBuilder.new(example_data_set)
@@ -71,7 +61,7 @@ describe "Quacky::PieChartBuilder" do
   
   it "should be able to draw and raise error" do
     chart = Quacky::PieChartBuilder.new
-    lambda {chart.draw}.should raise_error
+    chart.draw.should be_true
   end
   
 end
