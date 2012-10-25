@@ -1,7 +1,6 @@
 require "quacky/version"
 require "quacky/pie_chart_builder"
-
-#include ActionView::Helpers::TagHelper
+require "json"
 
 module Quacky
 end
