@@ -11,7 +11,7 @@ module Quacky
     # Return a content tag that can be selected by the client-side, and drawn on.
     # The data attribute of the HTML tag is @data.
     def draw
-      "<div class='pie-chart' data=#{@data.to_json}></div>".html_safe
+      "<div class='pie-chart' data-chart='#{@data.to_json}'></div>".html_safe
     end
     
     # Add data.  If input is a hash, add it in.  Otherwise (it's an array, most likely),

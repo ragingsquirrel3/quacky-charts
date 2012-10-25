@@ -1,3 +1,4 @@
+# based on the example at https://github.com/mbostock/d3/blob/master/examples/donut/donut.html
 $(document).ready( ->
 	builder = new PieChartBuilder
 	builder.drawCharts()
@@ -6,16 +7,27 @@ $(document).ready( ->
 class PieChartBuilder
 
 	drawCharts: ->
-		w = 200
-		h = 200
-		r = 100
+		allCharts = $(".pie-chart")
+		@appendChart chart for chart in allCharts
+		
+	appendChart: (container) ->
+		
+		w = 300
+		h = 300
+		r = 150
 		color = d3.scale.category20c()
 		
-		data = [{"label":"one", "value":20}, 
-	          {"label":"two", "value":50}, 
-	          {"label":"three", "value":30}]
+		# If there is data in the container's data attribute, set it.
+		# Else, use some dummy data.
+		init_data = $(container).data()["chart"]
+		if init_data.length == 0
+			data = [{"label":"one", "value":20}, 
+		          {"label":"two", "value":50}, 
+		          {"label":"three", "value":30}]
+		else
+			data = init_data
 	
-		vis = d3.select(".pie-chart").append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")")
+		vis = d3.select(container).append("svg:svg").data([data]).attr("width", w).attr("height", h).append("svg:g").attr("transform", "translate(" + r + "," + r + ")")
 		arc = d3.svg.arc().outerRadius(r)
 		
 		pie = d3.layout.pie().value( (d) ->
