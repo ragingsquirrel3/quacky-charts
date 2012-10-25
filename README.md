@@ -22,6 +22,11 @@ Add this line to the controller:
 
 		@chart = Quacky::PieChartBuilder.new
 		
+If you want to add some custom data (otherwise you'll get dummy data):
+
+		@chart.add_data( { "label" => "Category A", "value" => 20 } )
+		@chart.add_data( { "label" => "Category B", "value" => 60 } )
+		
 and in the view:
 
 		<%= @chart.draw %>
