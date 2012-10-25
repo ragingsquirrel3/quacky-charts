@@ -7,8 +7,8 @@ $(document).ready( ->
 class PieChartBuilder
 
 	drawCharts: ->
-		w = 300
-		h = 300
+		w = 200
+		h = 200
 		r = 100
 		color = d3.scale.category20c()
 		

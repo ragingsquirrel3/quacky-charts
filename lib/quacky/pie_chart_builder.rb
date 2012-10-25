@@ -8,7 +8,7 @@ module Quacky
     
     # return a content tag that can be selected by the client-side, and drawn on
     def draw
-      "<div class='pie-chart'>".html_safe
+      "<div class='pie-chart'></div>".html_safe
     end
     
     def add_data(input)
