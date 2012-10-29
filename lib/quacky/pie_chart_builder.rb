@@ -1,5 +1,4 @@
 module Quacky
-  
   class PieChartBuilder
     
     @data = []
@@ -33,5 +32,4 @@ module Quacky
     end
   
   end
-  
 end
