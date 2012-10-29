@@ -9,7 +9,9 @@ module Quacky
       
       def write_js_files
         copy_file "pie_charts.js.coffee", "app/assets/javascripts/pie_charts.js.coffee"
+        copy_file "bar_graphs.js.coffee", "app/assets/javascripts/bar_graphs.js.coffee"
         copy_file "d3.v2.min.js", "app/assets/javascripts/d3.v2.min.js"
+        copy_file "rickshaw.min.js", "app/assets/javascripts/rickshaw.min.js"
       end
   
     end
