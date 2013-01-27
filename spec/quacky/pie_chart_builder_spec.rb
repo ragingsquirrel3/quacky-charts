@@ -59,9 +59,4 @@ describe "Quacky::PieChartBuilder" do
     chart.get_data.should eq( [ first_example_data_point, second_example_data_point ] )
   end
   
-  it "should be able to draw and raise error" do
-    chart = Quacky::PieChartBuilder.new
-    lambda {chart.draw}.should raise_error
-  end
-  
 end
