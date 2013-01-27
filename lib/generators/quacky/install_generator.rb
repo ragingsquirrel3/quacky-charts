@@ -10,7 +10,7 @@ module Quacky
       def write_js_files
         # coffee builders
         copy_file 'pie_chart_builder.js.coffee', 'app/assets/javascripts/pie_chart_builder.js.coffee'
-        copy_file 'line_graph_builder,js.coffee', 'app/assets/javascripts/line_graph_builder.js.coffee'
+        copy_file 'line_graph_builder.js.coffee', 'app/assets/javascripts/line_graph_builder.js.coffee'
         
         # vendor js libraries
         vendor_dir = 'vendor/assets/javascripts'
