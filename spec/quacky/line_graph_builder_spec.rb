@@ -16,14 +16,20 @@ describe "Quacky::LineGraphBuilder" do
   end
   
   it "should output its time series data in a Rickshaw-accepted format" do
+    first_time = Time.now
+    second_time =  Time.now + 1
     example_data = [
-      { Time.now =>  50 },
-      { Time.now + 1 => 75 }
+      { time: first_time, data: 50 },
+      { time: second_time, data: 75 }
     ]
     
-    expected_output = example_data.to_json
-    graph = Quacky::LineGraphBuilder.new(example_data)
+    expected_output = [
+      { x: first_time.to_i * 1000, y: 50 },
+      { x: second_time.to_i * 1000, y: 75 }
+    ].to_json
     
+    graph = Quacky::LineGraphBuilder.new(example_data)
+    graph.get_data.should eq(expected_output)
   end
   
 end
