@@ -5,11 +5,17 @@ module Quacky
     class InstallGenerator < ::Rails::Generators::Base
       
       source_root File.expand_path("../templates", __FILE__)
-      desc "This gesnerator installs JS files needed for D3 pie charts"
+      desc "This generator installs JS files needed for D3 pie charts"
       
       def write_js_files
-        copy_file "pie_charts.js.coffee", "app/assets/javascripts/pie_charts.js.coffee"
-        copy_file "d3.v2.min.js", "app/assets/javascripts/d3.v2.min.js"
+        # coffee builders
+        copy_file 'pie_chart_builder.js.coffee', 'app/assets/javascripts/pie_chart_builder.js.coffee'
+        copy_file 'line_graph_builder,js.coffee', 'app/assets/javascripts/line_graph_builder.js.coffee'
+        
+        # vendor js libraries
+        vendor_dir = 'vendor/assets/javascripts'
+        copy_file 'd3.v2.min.js', "#{vendor_dir}/d3.v2.min.js"
+        copy_file 'rickshaw.min.js', "#{vendor_dir}/rickshaw.min.js"
       end
   
     end
