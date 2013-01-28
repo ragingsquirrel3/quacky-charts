@@ -1,6 +1,6 @@
 ## About
 
-QuackyCharts is a graphing gem I'm working on.  The goal is to easily create charts and graphs, abstracting the JS tools used to to do.  For now, it only creates simple pie charts using D3.  The next step is to add some configuration tools.  Eventually, I'd like to add different kinds of graphs.
+QuackyCharts is a graphing gem I'm working on.  It provides a Ruby syntax for initializing and configuring pie charts and line graphs with D3 and Rickshaw.
 
 ## Installation
 
