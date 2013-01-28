@@ -10,7 +10,7 @@ module Quacky
      # Return a content tag that can be selected by the client-side, and drawn on.
      # The data attribute of the HTML tag is @data.
      def draw
-       "<div class='line-graph' data-chart='#{@data.to_json}'></div>".html_safe
+       "<div class='line-graph' data-chart='#{self.get_data.to_json}'></div>".html_safe
      end
      
      def get_data
