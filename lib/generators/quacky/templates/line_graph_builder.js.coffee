@@ -12,18 +12,20 @@ class LineGraphBuilder
 		@appendGraph graph for graph in allGraphs
   
 	appendGraph: (container) ->
-	  data = $(container).data()['chart']
-	  graph = new Rickshaw.Graph(
-	    element: $(container)[0]
-	    width: 580
-	    height: 250
-	    renderer: 'line'
-	    series: [{ color: 'steelblue', data: data }]
-	  )
-	  y_axis = new Rickshaw.Graph.Axis.Y(
-	    graph: graph
-	    orientation: 'left'
-	    tickFormat: Rickshaw.Fixtures.Number.formatKMBT
-	    element: document.getElementById('y-axis')
-	  )
-	  graph.render()
+		data = $(container).data()['chart']
+		graph = new Rickshaw.Graph(
+			element: $(container)[0]
+			renderer: 'line'
+			series: [{ color: 'steelblue', data: data }]
+		)
+		
+		x_axis = new Rickshaw.Graph.Axis.Time( { graph: graph } )
+		
+		y_axis = new Rickshaw.Graph.Axis.Y(
+			graph: graph
+			orientation: 'left'
+			tickFormat: Rickshaw.Fixtures.Number.formatKMBT
+			element: $('.y-axis')[0]
+		)
+		
+		graph.render()

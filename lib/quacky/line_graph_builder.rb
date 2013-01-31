@@ -10,7 +10,7 @@ module Quacky
      # Return a content tag that can be selected by the client-side, and drawn on.
      # The data attribute of the HTML tag is @data.
      def draw
-       "<div class='line-graph' data-chart='#{self.get_data}'></div>".html_safe
+       "<div class='line-graph-container'><div class='y-axis'></div><div class='line-graph' data-chart='#{self.get_data}'></div></div>".html_safe
      end
      
      def get_data
@@ -18,7 +18,7 @@ module Quacky
        
        @data.each do |event|
          output << {
-           x: event[:time].to_i * 1000,
+           x: event[:time].to_i,
            y: event[:data]
          }
        end

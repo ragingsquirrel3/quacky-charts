@@ -15,9 +15,9 @@ class PieChartBuilder
 	# If no init data, draws from dummy data.
 	appendChart: (container) ->
 		
-		w = 300
-		h = 300
-		r = 150
+		w = $(container).width()
+		h = w
+		r = w / 2
 		color = d3.scale.category20c()
 		
 		# If there is data in the container's data attribute, set it.
