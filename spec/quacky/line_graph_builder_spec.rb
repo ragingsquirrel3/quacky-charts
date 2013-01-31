@@ -24,8 +24,8 @@ describe "Quacky::LineGraphBuilder" do
     ]
     
     expected_output = [
-      { x: first_time.to_i * 1000, y: 50 },
-      { x: second_time.to_i * 1000, y: 75 }
+      { x: first_time.to_i, y: 50 },
+      { x: second_time.to_i, y: 75 }
     ].to_json
     
     graph = Quacky::LineGraphBuilder.new(example_data)
