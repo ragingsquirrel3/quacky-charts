@@ -18,8 +18,8 @@ module Quacky
        
        @data.each do |event|
          output << {
-           x: event[:time].to_i,
-           y: event[:data]
+           :x => event[:time].to_i,
+           :y => event[:data]
          }
        end
        
