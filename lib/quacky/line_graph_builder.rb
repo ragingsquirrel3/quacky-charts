@@ -18,7 +18,7 @@ module Quacky
        
        @data.each do |event|
          output << {
-           x: event[:time].to_i * 1000,
+           x: event[:time].to_i,
            y: event[:data]
          }
        end
